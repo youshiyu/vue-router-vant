@@ -11,8 +11,8 @@ const Home = ()=>import('./views/home.vue')
 const Search= ()=>import('./views/search.vue')
 const Settings= ()=>import('./views/settings.vue')
 const Friends= ()=>import('./views/friends.vue')
-
-
+const Songs=()=>import('./views/songs.vue')
+const News=()=>import('./views/news.vue')
 Vue.use(Router)
 
 const router= new Router({
@@ -21,7 +21,6 @@ const router= new Router({
       path: '/home',
       name: 'home',
       component: Home,
-      // redirect:'/home'
     },
     {
       path: '/search',
@@ -38,6 +37,16 @@ const router= new Router({
       name: 'friends',
       component: Friends
     },
+    {
+      path: '/songs',
+      name: 'songs',
+      component: Songs
+    },
+    { 
+    path: '/news',
+    name: 'news',
+    component: News
+    }
   
   ],
   mode:"hash"

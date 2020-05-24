@@ -1,12 +1,17 @@
 <template>
 	<div class="search">
-	    <input type="text" placeholder="输入搜索内容">
+	    <input type="text" placeholder="输入搜索内容"> 
+		<van-loading  color="green" />
 	</div>
 </template>
 
 <script>
+import { Loading } from 'vant';
 export default {
+  components: {
+    [Loading.name]: Loading,
     name:'Search'
+}
 }
 </script>
 <style scoped>

@@ -12,8 +12,8 @@
 </template>
 
 <script>
-import { Tabbar, TabbarItem } from 'vant';
-export default {
+import { Tabbar, TabbarItem } from 'vant'; //注意导入
+export default {  //同时暴露出去
     components:{
         [Tabbar.name]: Tabbar,
         [TabbarItem.name]: TabbarItem,
@@ -34,7 +34,7 @@ export default {
     methods:{
         tabClick(){
         // this.$router.replace("/home");    
-       
+       console.log('click tab')
         },
         changetohome(){
            this.$router.replace("/home")

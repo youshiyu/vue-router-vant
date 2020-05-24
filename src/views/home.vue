@@ -2,50 +2,63 @@
     <div>
         <lg-header :leftArrow="false" :titleType="1" title="首页"></lg-header>
         <div class="list">
-            <lg-tab :title="title" :scrollerable="false" :animated="true" @tab-change="tabChange" @on-refresh="onRefresh" 
-            @on-infinite="onInfinite">
-                <!-- <p v-for="i in num"   :key="i">{{content[i]}}</p> -->
-                <p>{{content[num]}}</p>
+            <lg-tab :title="title" :scrollerable="false" :animated="true" @tab-change="tabChange"> 
+               <div v-if="newshow">
+                     <News></News>
+               </div>
+                <div v-else-if="songshow">
+                     <Songs></Songs>
+               </div>
+              <div v-else-if="codeshow">
+                  <Codelearning></Codelearning>
+              </div>
             </lg-tab>
         </div>
-      
     </div>
 </template>
 
 <script>
+import News from "./news" 
+import Songs from "./songs" 
+import Codelearning from "./codelearning"
+import Friends from "./friends"
 export default {
     name:"Home",
     data(){
         return {
             title:[
-                {id:'0',title:'音乐推荐'},
-                {id:'1',title:'热门新闻'},
+                {id:'0',title:'热门新闻'},
+                {id:'1',title:'音乐推荐'},
                 {id:'2',title:'编程学习'},
             ],
-            num: 1,
-            content:['','冬眠-思南','4/12日热点新闻','javascript']
+            newshow :true,
+            songshow:false,
+            codeshow:false
         }
     },
     methods:{
         tabChange(index,title){
-            console.log("index:"+index+":num"+this.num)
-          
-            if(this.num==3)
-            this.num=0;
-          this.num ++;
-        },
-        onRefresh(done){
-            setTimeout(()=>{
-              //  done();
-            },1500)
-        },
-        onInfinite(done){
-            setTimeout(()=>{
-                this.num += 50;
-                //done();
-            },1500)
+          console.log(index,title);
+          if(index===0){
+              this.newshow=true;
+              this.songshow=false;
+              this.codeshow=false;
+          }
+         else if(index===1){
+              this.newshow=false;
+              this.songshow=true;
+              this.codeshow=false;
+          }
+          else  if(index===2){
+              this.newshow=false;
+              this.songshow=false;
+              this.codeshow=true;
+          }
         }
     },
+     components:{
+         News,Songs,Codelearning
+     }
 }
 </script>
 <style lang="scss" scoped>
