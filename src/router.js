@@ -1,5 +1,6 @@
 import Vue from 'vue'
 import Router from 'vue-router'
+//路由转换
 
 // import Home from './views/home.vue'
 // import Search from './views/search.vue'
@@ -9,10 +10,10 @@ import Router from 'vue-router'
 //懒加载
 const Home = ()=>import('./views/home.vue')
 const Search= ()=>import('./views/search.vue')
-const Settings= ()=>import('./views/settings.vue')
+// const Settings= ()=>import('./views/settings.vue')
 const Friends= ()=>import('./views/friends.vue')
-const Songs=()=>import('./views/songs.vue')
-const News=()=>import('./views/news.vue')
+// const Songs=()=>import('./views/songs.vue')
+//const News=()=>import('./views/news.vue')
 Vue.use(Router)
 
 const router= new Router({
@@ -28,25 +29,10 @@ const router= new Router({
       component: Search
     },
     {
-      path: '/settings',
-      name: ' settings',
-      component:  Settings
-    },
-    {
       path: '/friends',
       name: 'friends',
       component: Friends
     },
-    {
-      path: '/songs',
-      name: 'songs',
-      component: Songs
-    },
-    { 
-    path: '/news',
-    name: 'news',
-    component: News
-    }
   
   ],
   mode:"hash"

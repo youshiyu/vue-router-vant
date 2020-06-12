@@ -1,17 +1,18 @@
 <template>
     <div class="total">
-    <h2>新闻</h2>
-    <p>test</p>
     </div>
 </template>
 
 <script>
 export default {
-    name:'News'
+    name:'Map'
 }
 </script>
 <style scoped>
 .total{
+    margin-top: 50px;
+    display: flex;
+    justify-content: center;
     text-align:center;
     background: plum;
     font-size: 4rem;

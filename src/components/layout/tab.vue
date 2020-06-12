@@ -14,11 +14,8 @@
         :animated="animated"
         :border="border"
         :ellipsis="ellipsis"
-        :sticky="sticky"
-        :swipeable="swipeable"
-        :lazy-render="lazyRender"
         @change="tabChange"
-        :class="scrollerable ? 'tab-scroller': sticky ? 'tab-list' : ''"
+    
     >
         <scroller class="tab-scroller-container" :on-refresh="onRefresh" :on-infinite="onInfinite" v-if="scrollerable" ref="vanTabs">
             <van-tab v-for="(i,index) in title" :title="i.title" :key="index">

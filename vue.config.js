@@ -4,5 +4,11 @@ module.exports = {
   assetsDir:'assets',
   lintOnSave:false,
   runtimeCompiler:false,
-  productionSourceMap:false
+  productionSourceMap:false,
+  configureWebpack: {
+    externals: {
+       'AMap': 'AMap',
+    }
+}
+
 };
