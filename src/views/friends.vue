@@ -11,7 +11,9 @@
 import { Divider } from 'vant';
 export default {
     data () {
-       
+       return{
+           
+       }
     },
     methods:{
     
